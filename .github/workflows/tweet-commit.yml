@@ -1,17 +1,16 @@
-name: Tweet Latest Commit/Release
+name: Shared Tweet Workflow
 
 on:
-  push:
-    branches: [ main, master ]
-  release:
-    types: [ published ]
+  workflow_call: # Allows this workflow to be called by other repositories
 
 jobs:
   tweet:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
+      - name: Checkout Bot Repository
         uses: actions/checkout@v4
+        with:
+          repository: 'git-doe/commiter' # Fetches the script from central repo
 
       - name: Set up Python
         uses: actions/setup-python@v5
