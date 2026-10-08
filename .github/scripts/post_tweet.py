@@ -4,10 +4,10 @@ import tweepy
 
 def main():
     # Load environment variables
-    api_key = os.environ["X_API_KEY"]
-    api_secret = os.environ["X_API_SECRET"]
-    access_token = os.environ["X_ACCESS_TOKEN"]
-    access_secret = os.environ["X_ACCESS_SECRET"]
+    api_key = os.environ["API_KEY"]
+    api_secret = os.environ["API_SECRET"]
+    access_token = os.environ["ACCESS_TOKEN"]
+    access_secret = os.environ["ACCESS_SECRET"]
     
     context = json.loads(os.environ["GITHUB_CONTEXT"])
     event_name = context.get("event_name")
